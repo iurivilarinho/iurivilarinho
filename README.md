@@ -24,6 +24,10 @@
 
 <p><h1 align="center"><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=iurivilarinho&theme=dark" alt="iurivilarinho" /></h1></p>
 
+<div> 
+  <a href = "mailto:iuri-vilarinho@hotmail.com"><img src="https://img.shields.io/badge/-Hotmail-%23333?style=for-the-badge&logo=hotmail&logoColor=white" target="_blank"></a>
+  <a href="https://www.linkedin.com/in/iuri-vilarinho-0baa17140/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+
 ![snake gif](https://github.com/iurivilarinho/iurivilarinho/blob/output/github-contribution-grid-snake.svg)
 <!--- - 👋 Hi, I’m @iurivilarinho
 - 👀 I’m interested in job opportunities in the areas of software development and database.
