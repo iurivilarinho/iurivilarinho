@@ -5,7 +5,7 @@
 <h1 align="center">Meus status</h1>
 
 <p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-readme-stats.vercel.app/api?username=iurivilarinho&show_icons=true&theme=dark" alt="nota"</p><br>
-<p align="center"> <a href="https://github.com/anuraghazra/github-readme-stats"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=iurivilarinho&theme=jolly" alt="stats" /></a> </p><br>
+<p align="center"> <a href="https://github.com/anuraghazra/github-readme-stats"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=iurivilarinho&theme=dark" alt="stats" /></a> </p><br>
 
 <h1 align="center">Linguagens e ferramentas</h1>
 <p align="center">
