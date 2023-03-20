@@ -24,7 +24,7 @@
 
 <p><h1 align="center"><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=iurivilarinho&theme=dark" alt="iurivilarinho" /></h1></p>
 
-
+![snake gif](https://github.com/iurivilarinho/iurivilarinho/blob/output/github-contribution-grid-snake.svg)
 <!--- - 👋 Hi, I’m @iurivilarinho
 - 👀 I’m interested in job opportunities in the areas of software development and database.
 - 🌱 I’m currently learning new techniques in front-end (Java Script - React Native) and database.
