@@ -9,14 +9,16 @@
 
 <h1 align="center">Linguagens e ferramentas</h1>
 <p align="center">
-<img src="https://github.com/devicons/devicon/blob/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a>
+
+<img src="https://github.com/devicons/devicon/blob/master/icons/spring/spring-original-wordmark.svg" alt="java" width="40" height="40"/> </a>
 <img src="https://github.com/devicons/devicon/blob/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a>
+<img src="https://github.com/devicons/devicon/blob/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a>
 <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a>
 <img src="https://github.com/devicons/devicon/blob/master/icons/vscode/vscode-original.svg" alt="vscode" width="40" height="40"/> </a>
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a>
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a></p><br>
 
-<p><h1 align="center"><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=alexandredinizveloso&theme=dark" alt="alexandredinizveloso" /></h1></p>
+<p><h1 align="center"><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=iurivilarinho&theme=dark" alt="iurivilarinho" /></h1></p>
 
 
 <!--- - 👋 Hi, I’m @iurivilarinho
