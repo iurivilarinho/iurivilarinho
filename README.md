@@ -4,7 +4,7 @@
 
 <h1 align="center">Meus status</h1>
 
-<p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-readme-stats.vercel.app/api?username=iurivilarinho&show_icons=true&theme=jolly" alt="nota"</p><br>
+<p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-readme-stats.vercel.app/api?username=iurivilarinho&show_icons=true&theme=dark" alt="nota"</p><br>
 <p align="center"> <a href="https://github.com/anuraghazra/github-readme-stats"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=iurivilarinho&theme=jolly" alt="stats" /></a> </p><br>
 
 <h1 align="center">Linguagens e ferramentas</h1>
@@ -25,8 +25,6 @@
 <p><h1 align="center"><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=iurivilarinho&theme=dark" alt="iurivilarinho" /></h1></p>
 
 <div> 
-  
-   <a href = "mailto:iuri-vilarinho@hotmail.com"><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fworldvectorlogo.com%2Fpt%2Flogo%2Fwhatsapp-business&psig=AOvVaw2fY0_a74jUOLiXK59Tsdk1&ust=1679425109984000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCID2_ZqY6_0CFQAAAAAdAAAAABAF" target="_blank"></a>
   <a href = "mailto:iuri-vilarinho@hotmail.com"><img src="https://img.shields.io/badge/-Hotmail-%23333?style=for-the-badge&logo=hotmail&logoColor=white" target="_blank"></a>
   <a href="https://www.linkedin.com/in/iuri-vilarinho-0baa17140/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
 
