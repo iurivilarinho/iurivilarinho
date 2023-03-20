@@ -1,4 +1,8 @@
-<h1 align="center">Seja bem vindo</h1>
+<h1 align="center">Olá! 👋</h1>
+
+Sou um desenvolvedor Back-end com interesse em Java, Spring boot, Node e Python. Sempre busco aprimorar mais meus conhecimentos sobre essas tecnologias ⚛️.
+
+Atualmente trabalho como desenvolvedor back-end Java(Spring Boot) com foco em API's.
 
 <p align="left"> <a href="https://github.com/iurivilarinho"><!---<img src="https://i.imgur.com/nQqd4GR.png" alt="banner" />---></a> </p><br>
 
