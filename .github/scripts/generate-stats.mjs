@@ -10,7 +10,7 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
     Profile Stats
   </text>
   <text x="28" y="92" fill="#8b949e" font-size="16" font-family="Arial, sans-serif">
-    Gerado via GitHub Actions (sem Vercel/Heroku)
+    Gerado via GitHub Actions
   </text>
   <text x="28" y="130" fill="#8b949e" font-size="14" font-family="Arial, sans-serif">
     Atualizado automaticamente a cada 12h
