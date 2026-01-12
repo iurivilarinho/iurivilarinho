@@ -2,7 +2,7 @@ name: Generate Profile Assets
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "0 */6 * * *"   # a cada 6h (mais realista e estável)
   workflow_dispatch:
 
 permissions:
@@ -23,8 +23,10 @@ jobs:
         with:
           node-version: 20
 
-      - name: Generate profile stats SVG
+      - name: Generate profile stats SVG (real)
         run: node .github/scripts/generate-stats.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate snake SVG
         uses: Platane/snk@v3
