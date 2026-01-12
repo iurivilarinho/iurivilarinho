@@ -12,16 +12,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Generate profile stats
-        run: node scripts/generate-stats.mjs
+      - name: Generate profile stats SVG
+        run: node .github/scripts/generate-stats.mjs
 
-      - name: Generate snake
+      - name: Generate snake SVG
         uses: Platane/snk@v3
         with:
           github_user_name: iurivilarinho
