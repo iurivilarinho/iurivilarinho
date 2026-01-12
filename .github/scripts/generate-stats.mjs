@@ -78,9 +78,7 @@ async function main() {
           totalIssueContributions
           totalPullRequestContributions
           totalPullRequestReviewContributions
-          contributionCalendar {
-            totalContributions
-          }
+          contributionCalendar { totalContributions }
         }
         pinnedItems(first: 6, types: [REPOSITORY]) {
           nodes {
@@ -99,7 +97,8 @@ async function main() {
   const data = await gql(query, { login: USERNAME, from, to });
   const u = data.user;
 
-  const totalContrib = u.contributionsCollection.contributionCalendar.totalContributions;
+  const totalContrib =
+    u.contributionsCollection.contributionCalendar.totalContributions;
   const commits = u.contributionsCollection.totalCommitContributions;
   const prs = u.contributionsCollection.totalPullRequestContributions;
   const issues = u.contributionsCollection.totalIssueContributions;
@@ -120,7 +119,7 @@ async function main() {
 
   // ===== LAYOUT (AJUSTADO) =====
   const W = 900;
-  const H = 320; // mais altura para não cortar
+  const H = 340;
   const pad = 26;
 
   const bg = "#0d1117";
@@ -131,7 +130,10 @@ async function main() {
   const good = "#3fb950";
 
   const title = `${u.name ? u.name + " · " : ""}@${u.login}`;
-  const subtitle = `Resumo ${now.getUTCFullYear()} · Última atualização: ${nowBR}`;
+
+  // Subtítulo EM 2 LINHAS (remove o "embolado")
+  const subtitle1 = `Resumo ${now.getUTCFullYear()}`;
+  const subtitle2 = `Última atualização: ${nowBR}`;
 
   const rowsLeft = [
     ["Contribuições (ano)", fmt(totalContrib)],
@@ -152,14 +154,13 @@ async function main() {
   const leftX = pad;
   const rightX = W / 2 + 10;
 
-  // Empurra tabelas para baixo (evita sobreposição com título/subtítulo)
-  const topY = 130;
+  // Empurra as tabelas MAIS para baixo
+  const topY = 170;
   const rowH = 26;
 
   const pinnedX = W / 2 + 10;
   const pinnedCardY = topY + rowH * 5 + 26;
 
-  // ===== SVG =====
   let svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <defs>
@@ -176,8 +177,12 @@ async function main() {
   <text x="${pad + 18}" y="${pad + 34}" fill="${text}" font-size="22" font-family="Arial, sans-serif" font-weight="700">${esc(
     title
   )}</text>
+
   <text x="${pad + 18}" y="${pad + 62}" fill="${muted}" font-size="13" font-family="Arial, sans-serif">${esc(
-    subtitle
+    subtitle1
+  )}</text>
+  <text x="${pad + 18}" y="${pad + 82}" fill="${muted}" font-size="13" font-family="Arial, sans-serif">${esc(
+    subtitle2
   )}</text>
 
   <text x="${leftX + 18}" y="${topY - 18}" fill="${muted}" font-size="12" font-family="Arial, sans-serif" font-weight="700">ATIVIDADE</text>
@@ -217,7 +222,7 @@ async function main() {
   <line x1="${W / 2}" y1="${topY - 8}" x2="${W / 2}" y2="${H - pad - 26}" stroke="#30363d" stroke-width="1"/>
 `;
 
-  // Pinned repos block (right bottom)
+  // Pinned block
   svg += `
   <text x="${pinnedX + 18}" y="${pinnedCardY - 12}" fill="${muted}" font-size="12" font-family="Arial, sans-serif" font-weight="700">PINNED</text>
 `;
@@ -240,7 +245,7 @@ async function main() {
     )}</text>`;
   }
 
-  // Footer hint left bottom
+  // Footer
   svg += `
   <text x="${leftX + 18}" y="${H - pad - 6}" fill="${muted}" font-size="11" font-family="Arial, sans-serif">
     Gerado via GitHub Actions + GraphQL (dados reais)
