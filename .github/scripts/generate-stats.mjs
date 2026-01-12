@@ -1,3 +1,4 @@
+// .github/scripts/generate-stats.mjs
 import fs from "node:fs/promises";
 
 const USERNAME = "iurivilarinho";
@@ -52,8 +53,12 @@ async function main() {
   const now = new Date();
   const nowBR = now.toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" });
 
-  const from = new Date(Date.UTC(now.getUTCFullYear(), 0, 1, 0, 0, 0)).toISOString();
-  const to = new Date(Date.UTC(now.getUTCFullYear(), 11, 31, 23, 59, 59)).toISOString();
+  const from = new Date(
+    Date.UTC(now.getUTCFullYear(), 0, 1, 0, 0, 0)
+  ).toISOString();
+  const to = new Date(
+    Date.UTC(now.getUTCFullYear(), 11, 31, 23, 59, 59)
+  ).toISOString();
 
   const query = `
     query($login: String!, $from: DateTime!, $to: DateTime!) {
@@ -63,7 +68,10 @@ async function main() {
         followers { totalCount }
         following { totalCount }
         repositories(privacy: PUBLIC, isFork: false) { totalCount }
-        repositoriesContributedTo(contributionTypes: [COMMIT, ISSUE, PULL_REQUEST, REPOSITORY], includeUserRepositories: true) { totalCount }
+        repositoriesContributedTo(
+          contributionTypes: [COMMIT, ISSUE, PULL_REQUEST, REPOSITORY],
+          includeUserRepositories: true
+        ) { totalCount }
         starredRepositories { totalCount }
         contributionsCollection(from: $from, to: $to) {
           totalCommitContributions
@@ -110,9 +118,9 @@ async function main() {
     lang: r.primaryLanguage?.name || "—",
   }));
 
-  // Layout
+  // ===== LAYOUT (AJUSTADO) =====
   const W = 900;
-  const H = 260;
+  const H = 320; // mais altura para não cortar
   const pad = 26;
 
   const bg = "#0d1117";
@@ -143,15 +151,15 @@ async function main() {
 
   const leftX = pad;
   const rightX = W / 2 + 10;
-  const topY = 92;
 
+  // Empurra tabelas para baixo (evita sobreposição com título/subtítulo)
+  const topY = 130;
   const rowH = 26;
 
-  const pinnedY = 92;
   const pinnedX = W / 2 + 10;
-  const pinnedCardY = 92 + rowH * 5 + 18;
+  const pinnedCardY = topY + rowH * 5 + 26;
 
-  // Build SVG
+  // ===== SVG =====
   let svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <defs>
@@ -168,7 +176,7 @@ async function main() {
   <text x="${pad + 18}" y="${pad + 34}" fill="${text}" font-size="22" font-family="Arial, sans-serif" font-weight="700">${esc(
     title
   )}</text>
-  <text x="${pad + 18}" y="${pad + 58}" fill="${muted}" font-size="13" font-family="Arial, sans-serif">${esc(
+  <text x="${pad + 18}" y="${pad + 62}" fill="${muted}" font-size="13" font-family="Arial, sans-serif">${esc(
     subtitle
   )}</text>
 
@@ -206,7 +214,7 @@ async function main() {
 
   // Divider
   svg += `
-  <line x1="${W / 2}" y1="${topY - 8}" x2="${W / 2}" y2="${H - pad - 18}" stroke="#30363d" stroke-width="1"/>
+  <line x1="${W / 2}" y1="${topY - 8}" x2="${W / 2}" y2="${H - pad - 26}" stroke="#30363d" stroke-width="1"/>
 `;
 
   // Pinned repos block (right bottom)
@@ -215,15 +223,16 @@ async function main() {
 `;
 
   const cardW = W - pad - pinnedX;
-  const cardH = 96;
+  const cardH = 118;
+
   svg += `
   <rect x="${pinnedX + 12}" y="${pinnedCardY}" width="${cardW - 24}" height="${cardH}" rx="12" fill="#0d1117" stroke="#30363d"/>
 `;
 
-  const startY = pinnedCardY + 26;
+  const startY = pinnedCardY + 28;
   for (let i = 0; i < pinned.length; i++) {
     const r = pinned[i];
-    const y = startY + i * 18;
+    const y = startY + i * 22;
     const line = `${r.name} • ★ ${fmt(r.stars)} • ⑂ ${fmt(r.forks)} • ${r.lang}`;
     svg += `
   <text x="${pinnedX + 26}" y="${y}" fill="${text}" font-size="12.5" font-family="Arial, sans-serif">${esc(
