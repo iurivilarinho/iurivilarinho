@@ -16,6 +16,7 @@ Atualmente trabalho como desenvolvedor <strong>Back-end Java (Spring Boot)</stro
 ![Profile Stats](./dist/profile-stats.svg)
 ![Snake animation](./dist/github-contribution-grid-snake.svg)
 
+
 <br/>
 
 <h2 align="center">🛠 Linguagens e ferramentas</h2>
