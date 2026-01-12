@@ -117,9 +117,8 @@ async function main() {
     lang: r.primaryLanguage?.name || "—",
   }));
 
-  // ===== LAYOUT (AJUSTADO) =====
+  // ===== LAYOUT (ROBUSTO) =====
   const W = 900;
-  const H = 340;
   const pad = 26;
 
   const bg = "#0d1117";
@@ -130,8 +129,6 @@ async function main() {
   const good = "#3fb950";
 
   const title = `${u.name ? u.name + " · " : ""}@${u.login}`;
-
-  // Subtítulo EM 2 LINHAS (remove o "embolado")
   const subtitle1 = `Resumo ${now.getUTCFullYear()}`;
   const subtitle2 = `Última atualização: ${nowBR}`;
 
@@ -152,26 +149,35 @@ async function main() {
   ];
 
   const leftX = pad;
-  const rightX = W / 2 + 10;
+  const midX = W / 2;
+  const rightX = midX + 10;
 
-  // Empurra as tabelas MAIS para baixo
-  const topY = 170;
   const rowH = 26;
 
-  const pinnedX = W / 2 + 10;
-  const pinnedCardY = topY + rowH * 5 + 26;
+  // Tabelas começam abaixo do título/subtítulo
+  const topY = 170;
 
+  // Pinned block (só aparece se tiver pinned)
+  const showPinned = pinned.length > 0;
+
+  const pinnedX = rightX;
+  const pinnedLabelY = topY + rowH * 5 + 20;
+  const pinnedCardY = pinnedLabelY + 14;
+
+  const pinnedCardW = W - pad - pinnedX - 12; // respeita padding e bordas
+  const pinnedCardH = showPinned ? 118 : 0;
+
+  // Altura do SVG calculada pra nunca cortar nada
+  const minH = 340;
+  const neededH = showPinned
+    ? pinnedCardY + pinnedCardH + pad + 26
+    : topY + rowH * 5 + pad + 26;
+  const H = Math.max(minH, neededH);
+
+  // ===== SVG =====
   let svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="${accent}" stop-opacity="0.20"/>
-      <stop offset="100%" stop-color="${good}" stop-opacity="0.10"/>
-    </linearGradient>
-  </defs>
-
   <rect x="0" y="0" width="${W}" height="${H}" rx="18" fill="${bg}"/>
-  <rect x="${pad - 6}" y="${pad - 6}" width="${W - (pad - 6) * 2}" height="${H - (pad - 6) * 2}" rx="16" fill="url(#g)"/>
   <rect x="${pad}" y="${pad}" width="${W - pad * 2}" height="${H - pad * 2}" rx="14" fill="${card}"/>
 
   <text x="${pad + 18}" y="${pad + 34}" fill="${text}" font-size="22" font-family="Arial, sans-serif" font-weight="700">${esc(
@@ -189,7 +195,7 @@ async function main() {
   <text x="${rightX + 18}" y="${topY - 18}" fill="${muted}" font-size="12" font-family="Arial, sans-serif" font-weight="700">PERFIL</text>
 `;
 
-  // Left table (activity)
+  // Left table
   for (let i = 0; i < rowsLeft.length; i++) {
     const y = topY + i * rowH;
     const [label, value] = rowsLeft[i];
@@ -198,12 +204,12 @@ async function main() {
   <text x="${leftX + 18}" y="${y}" fill="${text}" font-size="14" font-family="Arial, sans-serif">${esc(
       label
     )}</text>
-  <text x="${W / 2 - 22}" y="${y}" fill="${accent}" font-size="14" font-family="Arial, sans-serif" text-anchor="end" font-weight="700">${esc(
+  <text x="${midX - 22}" y="${y}" fill="${accent}" font-size="14" font-family="Arial, sans-serif" text-anchor="end" font-weight="700">${esc(
       value
     )}</text>`;
   }
 
-  // Right table (profile)
+  // Right table
   for (let i = 0; i < rowsRight.length; i++) {
     const y = topY + i * rowH;
     const [label, value] = rowsRight[i];
@@ -217,32 +223,29 @@ async function main() {
     )}</text>`;
   }
 
-  // Divider
+  // Divider (vai até perto do rodapé, respeitando o conteúdo)
+  const dividerBottom = H - pad - 26;
   svg += `
-  <line x1="${W / 2}" y1="${topY - 8}" x2="${W / 2}" y2="${H - pad - 26}" stroke="#30363d" stroke-width="1"/>
+  <line x1="${midX}" y1="${topY - 8}" x2="${midX}" y2="${dividerBottom}" stroke="#30363d" stroke-width="1"/>
 `;
 
-  // Pinned block
-  svg += `
-  <text x="${pinnedX + 18}" y="${pinnedCardY - 12}" fill="${muted}" font-size="12" font-family="Arial, sans-serif" font-weight="700">PINNED</text>
-`;
-
-  const cardW = W - pad - pinnedX;
-  const cardH = 118;
-
-  svg += `
-  <rect x="${pinnedX + 12}" y="${pinnedCardY}" width="${cardW - 24}" height="${cardH}" rx="12" fill="#0d1117" stroke="#30363d"/>
-`;
-
-  const startY = pinnedCardY + 28;
-  for (let i = 0; i < pinned.length; i++) {
-    const r = pinned[i];
-    const y = startY + i * 22;
-    const line = `${r.name} • ★ ${fmt(r.stars)} • ⑂ ${fmt(r.forks)} • ${r.lang}`;
+  // Pinned (somente se houver)
+  if (showPinned) {
     svg += `
+  <text x="${pinnedX + 18}" y="${pinnedLabelY}" fill="${muted}" font-size="12" font-family="Arial, sans-serif" font-weight="700">PINNED</text>
+  <rect x="${pinnedX + 12}" y="${pinnedCardY}" width="${pinnedCardW}" height="${pinnedCardH}" rx="12" fill="#0d1117" stroke="#30363d"/>
+`;
+
+    const startY = pinnedCardY + 28;
+    for (let i = 0; i < pinned.length; i++) {
+      const r = pinned[i];
+      const y = startY + i * 22;
+      const line = `${r.name} • ★ ${fmt(r.stars)} • ⑂ ${fmt(r.forks)} • ${r.lang}`;
+      svg += `
   <text x="${pinnedX + 26}" y="${y}" fill="${text}" font-size="12.5" font-family="Arial, sans-serif">${esc(
-      line
-    )}</text>`;
+        line
+      )}</text>`;
+    }
   }
 
   // Footer
