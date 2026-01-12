@@ -11,15 +11,10 @@ Atualmente trabalho como desenvolvedor <strong>Back-end Java (Spring Boot)</stro
 
 <br/>
 
-<h2 align="center">📊 Meus status</h2>
+## 📊 Meus status
 
-<p align="center">
-  <img
-    src="https://raw.githubusercontent.com/iurivilarinho/iurivilarinho/main/profile-stats.svg"
-    height="180"
-    alt="Profile Stats"
-  />
-</p>
+![Profile Stats](./assets/profile-stats.svg)
+![Snake animation](./assets/github-contribution-grid-snake.svg)
 
 <p align="center">
   <img
