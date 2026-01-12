@@ -12,6 +12,7 @@ Atualmente trabalho como desenvolvedor <strong>Back-end Java (Spring Boot)</stro
 <br/>
 
 ## 📊 Meus status
+
 ![Profile Stats](./dist/profile-stats.svg)
 ![Snake animation](./dist/github-contribution-grid-snake.svg)
 
