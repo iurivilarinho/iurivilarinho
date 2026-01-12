@@ -1,13 +1,19 @@
 <h1 align="center">Olá! 👋</h1>
 
 <p align="center">
-Sou um desenvolvedor <strong>Back-end</strong> com interesse em <strong>Java, Spring Boot, Node.js e Python</strong>.
-Sempre busco aprimorar meus conhecimentos nessas tecnologias.
+Sou um desenvolvedor <strong>Pleno</strong> com foco em <strong>Back-end</strong>, atuando com
+<strong>Java e Spring Boot</strong>, e experiência em <strong>Front-end e Mobile</strong>
+com <strong>React (TypeScript) e React Native</strong>.
+Tenho forte interesse em <strong>Ciência de Dados e Inteligência Artificial</strong>,
+buscando aplicar análise de dados, automação e soluções inteligentes no dia a dia.
 </p>
 
 <p align="center">
-Atualmente trabalho como desenvolvedor <strong>Back-end Java (Spring Boot)</strong>, com foco em <strong>APIs REST</strong>.
+Atualmente trabalho como desenvolvedor <strong>Java (Spring Boot)</strong>, atuando como
+<strong>Dev Pleno</strong>, com foco em <strong>APIs REST</strong>, integração de sistemas,
+boas práticas de arquitetura e evolução para soluções orientadas a dados e IA.
 </p>
+
 
 <br/>
 
