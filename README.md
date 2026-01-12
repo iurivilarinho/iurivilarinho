@@ -42,7 +42,7 @@ Atualmente trabalho como desenvolvedor <strong>Back-end Java (Spring Boot)</stro
   <a href="mailto:iuri-vilarinho@hotmail.com">
     <img src="https://img.shields.io/badge/Hotmail-333?style=for-the-badge&logo=hotmail&logoColor=white" alt="Hotmail"/>
   </a>
-  <a href="https://www.linkedin.com/in/iuri-vilarinho-0baa17140/" target="_blank" rel="noreferrer">
+  <a href="https://www.linkedin.com/in/iurivilarinho/" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
 </p>
