@@ -80,16 +80,6 @@ async function main() {
           totalPullRequestReviewContributions
           contributionCalendar { totalContributions }
         }
-        pinnedItems(first: 6, types: [REPOSITORY]) {
-          nodes {
-            ... on Repository {
-              name
-              stargazerCount
-              forkCount
-              primaryLanguage { name }
-            }
-          }
-        }
       }
     }
   `;
@@ -110,15 +100,9 @@ async function main() {
   const starsGiven = u.starredRepositories.totalCount;
   const contributedTo = u.repositoriesContributedTo.totalCount;
 
-  const pinned = (u.pinnedItems.nodes || []).slice(0, 4).map((r) => ({
-    name: r.name,
-    stars: r.stargazerCount,
-    forks: r.forkCount,
-    lang: r.primaryLanguage?.name || "—",
-  }));
-
-  // ===== LAYOUT (ROBUSTO) =====
+  // ===== LAYOUT =====
   const W = 900;
+  const H = 290; // sem PINNED, não precisa ser alto
   const pad = 26;
 
   const bg = "#0d1117";
@@ -129,8 +113,7 @@ async function main() {
   const good = "#3fb950";
 
   const title = `${u.name ? u.name + " · " : ""}@${u.login}`;
-  const subtitle1 = `Resumo ${now.getUTCFullYear()}`;
-  const subtitle2 = `Última atualização: ${nowBR}`;
+  const subtitle = `Resumo ${now.getUTCFullYear()} · Última atualização: ${nowBR}`;
 
   const rowsLeft = [
     ["Contribuições (ano)", fmt(totalContrib)],
@@ -153,28 +136,8 @@ async function main() {
   const rightX = midX + 10;
 
   const rowH = 26;
+  const topY = 130; // começa abaixo do título/subtítulo
 
-  // Tabelas começam abaixo do título/subtítulo
-  const topY = 170;
-
-  // Pinned block (só aparece se tiver pinned)
-  const showPinned = pinned.length > 0;
-
-  const pinnedX = rightX;
-  const pinnedLabelY = topY + rowH * 5 + 20;
-  const pinnedCardY = pinnedLabelY + 14;
-
-  const pinnedCardW = W - pad - pinnedX - 12; // respeita padding e bordas
-  const pinnedCardH = showPinned ? 118 : 0;
-
-  // Altura do SVG calculada pra nunca cortar nada
-  const minH = 340;
-  const neededH = showPinned
-    ? pinnedCardY + pinnedCardH + pad + 26
-    : topY + rowH * 5 + pad + 26;
-  const H = Math.max(minH, neededH);
-
-  // ===== SVG =====
   let svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <rect x="0" y="0" width="${W}" height="${H}" rx="18" fill="${bg}"/>
@@ -185,10 +148,7 @@ async function main() {
   )}</text>
 
   <text x="${pad + 18}" y="${pad + 62}" fill="${muted}" font-size="13" font-family="Arial, sans-serif">${esc(
-    subtitle1
-  )}</text>
-  <text x="${pad + 18}" y="${pad + 82}" fill="${muted}" font-size="13" font-family="Arial, sans-serif">${esc(
-    subtitle2
+    subtitle
   )}</text>
 
   <text x="${leftX + 18}" y="${topY - 18}" fill="${muted}" font-size="12" font-family="Arial, sans-serif" font-weight="700">ATIVIDADE</text>
@@ -223,30 +183,10 @@ async function main() {
     )}</text>`;
   }
 
-  // Divider (vai até perto do rodapé, respeitando o conteúdo)
-  const dividerBottom = H - pad - 26;
+  // Divider
   svg += `
-  <line x1="${midX}" y1="${topY - 8}" x2="${midX}" y2="${dividerBottom}" stroke="#30363d" stroke-width="1"/>
+  <line x1="${midX}" y1="${topY - 8}" x2="${midX}" y2="${H - pad - 20}" stroke="#30363d" stroke-width="1"/>
 `;
-
-  // Pinned (somente se houver)
-  if (showPinned) {
-    svg += `
-  <text x="${pinnedX + 18}" y="${pinnedLabelY}" fill="${muted}" font-size="12" font-family="Arial, sans-serif" font-weight="700">PINNED</text>
-  <rect x="${pinnedX + 12}" y="${pinnedCardY}" width="${pinnedCardW}" height="${pinnedCardH}" rx="12" fill="#0d1117" stroke="#30363d"/>
-`;
-
-    const startY = pinnedCardY + 28;
-    for (let i = 0; i < pinned.length; i++) {
-      const r = pinned[i];
-      const y = startY + i * 22;
-      const line = `${r.name} • ★ ${fmt(r.stars)} • ⑂ ${fmt(r.forks)} • ${r.lang}`;
-      svg += `
-  <text x="${pinnedX + 26}" y="${y}" fill="${text}" font-size="12.5" font-family="Arial, sans-serif">${esc(
-        line
-      )}</text>`;
-    }
-  }
 
   // Footer
   svg += `
