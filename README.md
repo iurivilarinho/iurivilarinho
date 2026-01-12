@@ -16,15 +16,6 @@ Atualmente trabalho como desenvolvedor <strong>Back-end Java (Spring Boot)</stro
 ![Profile Stats](./dist/profile-stats.svg)
 ![Snake animation](./dist/github-contribution-grid-snake.svg)
 
-
-<p align="center">
-  <img
-    src="https://raw.githubusercontent.com/iurivilarinho/iurivilarinho/main/github-contribution-grid-snake.svg"
-    alt="Snake animation"
-  />
-</p>
-
-
 <br/>
 
 <h2 align="center">🛠 Linguagens e ferramentas</h2>
