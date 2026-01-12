@@ -11,6 +11,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,13 +34,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Move generated files to assets
-        run: |
-          mkdir -p assets
-          cp -f dist/*.svg assets/
-
-      - name: Commit and push
+      - name: Commit and push generated svgs
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: update profile assets"
-          file_pattern: assets/*.svg
+          commit_message: "chore: update profile svgs"
+          file_pattern: dist/*.svg
