@@ -11,60 +11,66 @@ Atualmente trabalho como desenvolvedor <strong>Back-end Java (Spring Boot)</stro
 
 <br/>
 
-<h1 align="center">📊 Meus status</h1>
+<h2 align="center">📊 Meus status</h2>
 
 <p align="center">
   <img
-    src="https://github-readme-stats.vercel.app/api?username=iurivilarinho&show_icons=true&theme=dark"
+    src="https://github-readme-stats.vercel.app/api?username=iurivilarinho&show_icons=true&theme=dark&hide_border=true&include_all_commits=true&count_private=true&cache_seconds=1800"
     height="165"
+    alt="GitHub Stats"
   />
   <img
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=iurivilarinho&layout=compact&theme=dark"
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=iurivilarinho&layout=compact&theme=dark&hide_border=true&cache_seconds=1800"
     height="165"
+    alt="Top Langs"
   />
-</p>
-
-<br/>
-
-<h1 align="center">🛠 Linguagens e ferramentas</h1>
-
-<p align="center">
-  <img src="https://github.com/devicons/devicon/blob/master/icons/java/java-original.svg" width="40" height="40"/>
-  <img src="https://github.com/devicons/devicon/blob/master/icons/spring/spring-original-wordmark.svg" width="40" height="40"/>
-  <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original.svg" width="40" height="40"/>
-  <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" width="40" height="40"/>
-  <img src="https://github.com/devicons/devicon/blob/master/icons/c/c-original.svg" width="40" height="40"/>
-  <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original.svg" width="40" height="40"/>
-  <img src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original-wordmark.svg" width="40" height="40"/>
-  <img src="https://github.com/devicons/devicon/blob/master/icons/microsoftsqlserver/microsoftsqlserver-plain-wordmark.svg" width="40" height="40"/>
-  <img src="https://github.com/devicons/devicon/blob/master/icons/linux/linux-original.svg" width="40" height="40"/>
-  <img src="https://github.com/devicons/devicon/blob/master/icons/vscode/vscode-original.svg" width="40" height="40"/>
 </p>
 
 <br/>
 
 <p align="center">
   <img
-    src="https://github-readme-streak-stats.herokuapp.com/?user=iurivilarinho&theme=dark"
+    src="https://github-readme-streak-stats.herokuapp.com/?user=iurivilarinho&theme=dark&hide_border=true"
     height="180"
+    alt="GitHub Streak"
   />
 </p>
 
 <br/>
 
-<h1 align="center">📫 Contato</h1>
+<h2 align="center">🛠 Linguagens e ferramentas</h2>
+
+<p align="center">
+  <img src="https://github.com/devicons/devicon/blob/master/icons/java/java-original.svg" width="40" height="40" alt="Java"/>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/spring/spring-original-wordmark.svg" width="40" height="40" alt="Spring"/>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original.svg" width="40" height="40" alt="Node.js"/>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" width="40" height="40" alt="Python"/>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/c/c-original.svg" width="40" height="40" alt="C"/>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original.svg" width="40" height="40" alt="Git"/>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original-wordmark.svg" width="40" height="40" alt="MySQL"/>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/microsoftsqlserver/microsoftsqlserver-plain-wordmark.svg" width="40" height="40" alt="SQL Server"/>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/linux/linux-original.svg" width="40" height="40" alt="Linux"/>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/vscode/vscode-original.svg" width="40" height="40" alt="VS Code"/>
+</p>
+
+<br/>
+
+<h2 align="center">📫 Contato</h2>
 
 <p align="center">
   <a href="mailto:iuri-vilarinho@hotmail.com">
-    <img src="https://img.shields.io/badge/Hotmail-333?style=for-the-badge&logo=hotmail&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Hotmail-333?style=for-the-badge&logo=hotmail&logoColor=white" alt="Hotmail"/>
   </a>
-  <a href="https://www.linkedin.com/in/iuri-vilarinho-0baa17140/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  <a href="https://www.linkedin.com/in/iuri-vilarinho-0baa17140/" target="_blank" rel="noreferrer">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
 </p>
 
 <br/>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/iurivilarinho/iurivilarinho/output/github-contribution-grid-snake.svg" alt="snake animation"/>
+  <img
+    src="https://raw.githubusercontent.com/iurivilarinho/iurivilarinho/output/github-contribution-grid-snake.svg"
+    alt="Snake animation"
+  />
 </p>
