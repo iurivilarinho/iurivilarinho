@@ -15,7 +15,7 @@ Atualmente trabalho como desenvolvedor <strong>Back-end Java (Spring Boot)</stro
 
 <p align="center">
   <img
-    src="https://raw.githubusercontent.com/iurivilarinho/iurivilarinho/output/profile-stats.svg"
+    src="https://raw.githubusercontent.com/iurivilarinho/iurivilarinho/main/profile-stats.svg"
     height="180"
     alt="Profile Stats"
   />
@@ -23,7 +23,7 @@ Atualmente trabalho como desenvolvedor <strong>Back-end Java (Spring Boot)</stro
 
 <p align="center">
   <img
-    src="https://raw.githubusercontent.com/iurivilarinho/iurivilarinho/output/github-contribution-grid-snake.svg"
+    src="https://raw.githubusercontent.com/iurivilarinho/iurivilarinho/main/github-contribution-grid-snake.svg"
     alt="Snake animation"
   />
 </p>
@@ -63,7 +63,7 @@ Atualmente trabalho como desenvolvedor <strong>Back-end Java (Spring Boot)</stro
 
 <p align="center">
   <img
-    src="https://raw.githubusercontent.com/iurivilarinho/iurivilarinho/output/github-contribution-grid-snake.svg"
+    src="https://raw.githubusercontent.com/iurivilarinho/iurivilarinho/main/github-contribution-grid-snake.svg"
     alt="Snake animation"
   />
 </p>
