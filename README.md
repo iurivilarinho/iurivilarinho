@@ -15,24 +15,9 @@ Atualmente trabalho como desenvolvedor <strong>Back-end Java (Spring Boot)</stro
 
 <p align="center">
   <img
-    src="https://github-readme-stats.vercel.app/api?username=iurivilarinho&show_icons=true&theme=dark&hide_border=true&include_all_commits=true&count_private=true&cache_seconds=1800"
-    height="165"
-    alt="GitHub Stats"
-  />
-  <img
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=iurivilarinho&layout=compact&theme=dark&hide_border=true&cache_seconds=1800"
-    height="165"
-    alt="Top Langs"
-  />
-</p>
-
-<br/>
-
-<p align="center">
-  <img
-    src="https://github-readme-streak-stats.herokuapp.com/?user=iurivilarinho&theme=dark&hide_border=true"
+    src="https://raw.githubusercontent.com/iurivilarinho/iurivilarinho/output/profile-stats.svg"
     height="180"
-    alt="GitHub Streak"
+    alt="Profile Stats"
   />
 </p>
 
